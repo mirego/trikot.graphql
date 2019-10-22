@@ -1,5 +1,5 @@
 package com.mirego.trikot.graphql
 
-class GraphqlSerializableVariable(
+class GraphqlJsonObject(
     val body: String
 )
