@@ -1,12 +1,15 @@
 package com.mirego.trikot.graphql
 
+import com.mirego.trikot.foundation.CommonJSExport
 import kotlinx.serialization.DeserializationStrategy
 
+@CommonJSExport
 interface GraphqlQuery<T> {
     val deserializer: DeserializationStrategy<T>
     val requestBody: String
 }
 
+@CommonJSExport
 abstract class AbstractGraphqlQuery<T>(override val deserializer: DeserializationStrategy<T>) :
     GraphqlQuery<T> {
     abstract val query: String
@@ -55,6 +58,7 @@ abstract class AbstractGraphqlQuery<T>(override val deserializer: Deserializatio
     }
 }
 
+@CommonJSExport
 fun String.jsonEscape(): String {
     return this.replace("\\", "\\\\")
         .replace("\"", "\\\"")
